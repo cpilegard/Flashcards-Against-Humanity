@@ -1,6 +1,5 @@
-require_relative "flashcards.rb"
 
-module flashcards_view
+module Flashcards_view
  
   def game_loop
 
@@ -24,7 +23,7 @@ module flashcards_view
         guess = gets.chomp
       else
         puts incorrect_responses.sample
-        guess == gets.chomp
+        guess = gets.chomp
       end
 
     end
