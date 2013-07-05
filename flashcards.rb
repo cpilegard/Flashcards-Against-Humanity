@@ -15,7 +15,7 @@ class Game
     @card_deck.send_flashcard
   end
 
-  def check_answer
+  def check_answer(guess)
     
   end
 
