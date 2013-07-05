@@ -1,6 +1,5 @@
-require_relative "flashcards.rb"
 
-module flashcards_view
+module Flashcards_view
  
   def game_loop
 
@@ -8,26 +7,30 @@ module flashcards_view
     puts "To play, just enter the correct term for each definition. To quit the game, type \"exit\""
     puts "Ready? Go!"
 
-    correct_responses = ["You rock!", "Correct-amundo!", "Fabulous!"]
-    incorrect_responses = ["Wrong!", "Not really....", "Maybe you shouldn't quit your day job..."]
+    correct_responses = ["Good enough, for now...", "The bigger they are...", "Took you long enough.", "As far as bare minimums go.", "Eh...",
+                          "Way to aim for the middle.", "Fucking NERD!", "Guess I won't be getting fries with that, yet..."]
+    incorrect_responses = ["Wow, I feel bad for your parents.", "Abortion: this is why.", 
+                          "What's it like failing out of clown college?", "Please DON'T donate your brain to science.", "You gave me cancer.", 
+                          "Please let there be an asteroid on the way.", "Dead kittens", 
+                          "You just made an old woman commit suicide.", "Are you being serious?"]
 
     card = get_card
 
-    puts card.print_definition
+    p card.definition
 
-
-    guess = gets.chomp
+    guess = ''
+    guess = $stdin.gets.chomp
 
     until guess == "exit"
 
       if check_answer(guess) == true
         puts correct_responses.sample
         card = get_card
-        puts card.print_definition
-        guess = gets.chomp
+        puts card.definition
+        guess = $stdin.gets.chomp
       else
         puts incorrect_responses.sample
-        guess == gets.chomp
+        guess = $stdin.gets.chomp
       end
 
     end
