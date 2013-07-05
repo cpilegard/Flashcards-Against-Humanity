@@ -13,6 +13,8 @@ module flashcards_view
 
     card = get_card
 
+    puts card.print_definition
+
 
     guess = gets.chomp
 
@@ -21,6 +23,7 @@ module flashcards_view
       if check_answer(guess) == true
         puts correct_responses.sample
         card = get_card
+        puts card.print_definition
         guess = gets.chomp
       else
         puts incorrect_responses.sample
