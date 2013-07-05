@@ -12,12 +12,16 @@ class Game
     @current_card = get_card
   end
 
+  def current_card
+    
+  end
+
   def get_card
-    @card_deck.send_flashcard
+    @current_card = @card_deck.send_flashcard
   end
 
   def check_answer(guess)
-    current_card.term == guess ? true : false
+    @current_card.term == guess
   end
 
 end
