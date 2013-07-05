@@ -15,15 +15,18 @@ class FlashcardModel
     populate_flashcards
   end
 
+  def send_flashcard
+    @all_flashcards.sample
+  end
+
+  private
+
   def populate_flashcards
     @card_pairs.each do |pair|
       @all_flashcards << Flashcard.new(pair[1], pair[0])
     end
   end
 
-  def send_flashcard
-    @all_flashcards.sample
-  end
 end
 
 
