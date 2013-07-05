@@ -1,5 +1,4 @@
 class FlashcardModel
-  attr_reader :all_flashcards
 
   def initialize
     @all_flashcards = []
