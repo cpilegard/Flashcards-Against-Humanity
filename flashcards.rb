@@ -5,7 +5,7 @@ require_relative 'flashcard_model'
 
 class Game
 
-  include Flashcards_view
+  include FlashcardsView
 
   def initialize
     @card_deck = FlashcardModel.new
@@ -30,18 +30,3 @@ if ARGV[0] == "play"
   game = Game.new
   game.game_loop
 end
-
-
-
-# Controller:
-
-# get_card
-# correct?
-# send_definition_to_view
-# do answer checking
-
-
-# Controller = "game"
-
-# View
-

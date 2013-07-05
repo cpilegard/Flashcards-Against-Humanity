@@ -1,5 +1,5 @@
 
-module Flashcards_view
+module FlashcardsView
  
   def game_loop
 
