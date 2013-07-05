@@ -11,16 +11,16 @@ module flashcards_view
     correct_responses = ["You rock!", "Correct-amundo!", "Fabulous!"]
     incorrect_responses = ["Wrong!", "Not really....", "Maybe you shouldn't quit your day job..."]
 
-    get_card
+    card = get_card
 
 
     guess = gets.chomp
 
     until guess == "exit"
 
-      if guess.check_answer == true
+      if check_answer(guess) == true
         puts correct_responses.sample
-        puts card.new_definition
+        card = get_card
         guess = gets.chomp
       else
         puts incorrect_responses.sample
